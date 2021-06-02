@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover" />
+	<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quasar@1.15.19/dist/quasar.min.css" />
+</head>
+<body>
+	<div id="app"><router-view></router-view></div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/quasar@1.15.19/dist/quasar.umd.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.1/dist/vue-router.min.js"></script>
+	<script>
+		var tplpageRoot = `
+			<q-layout view="lHh Lpr lFr">
+				<q-page-container>
+					<router-view></router-view>
+				</q-page-container>
+			</q-layout>
+		`;
+		
+		var tplpageHome = `
+			<div class="q-pa-none">
+				<q-page>
+					<div>个人简介</div>
+				</q-page>
+			</div>
+		`;
+
+		var pageRoot = {
+			template: tplpageRoot
+		};
+		
+		var pageHome = {
+			template: tplpageHome,
+			data: function () {
+				return {}
+			},
+			beforeCreate: function () {
+			},
+			created: function () {
+			},
+			beforeMount: function () {
+			},
+			mounted: function () {
+			},
+			beforeUpdate: function () {
+			},
+			updated: function () {
+			},
+			beforeDestroy: function () {
+			},
+			destroyed: function () {
+			},
+			errorCaptured: function () {
+			},
+			computed: {
+			},
+			watch: {
+			},
+			methods: {
+			}
+		};
+
+		var router = new VueRouter({
+			routes: [
+				{
+					path: '/',
+					component: pageRoot,
+					children: [
+						{
+							path: '',
+							name: 'Home',
+							component: pageHome
+						}
+					]
+				}
+			]
+		});
+
+		var vm = new Vue({
+			router: router,
+			el: '#app',
+			data: function () {
+				return {}
+			},
+		});
+	</script>
+</body>
+</html>
